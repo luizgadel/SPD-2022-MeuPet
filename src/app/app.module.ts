@@ -16,9 +16,17 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SignupComponent } from './signup/signup.component';
+import { PetListComponent } from './pet-list/pet-list.component';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 @NgModule({
-  declarations: [AppComponent, TopBarComponent, HomeComponent, SignupComponent],
+  declarations: [
+    AppComponent,
+    TopBarComponent,
+    HomeComponent,
+    SignupComponent,
+    PetListComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -31,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
     MatInputModule,
     MatRadioModule,
     MatTabsModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

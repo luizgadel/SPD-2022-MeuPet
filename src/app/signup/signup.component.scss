@@ -91,6 +91,12 @@ form {
 
 button {
   margin-top: 2rem;
+
+  ::ng-deep.mat-button-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
 }
 
 .ml-auto {

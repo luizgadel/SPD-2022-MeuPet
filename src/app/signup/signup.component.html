@@ -7,23 +7,22 @@
   <div mat-card-content>
     <mat-tab-group [(selectedIndex)]="step" dynamicHeight>
       <mat-tab>
-        <form>
-          <mat-label>Qual seu nome?</mat-label>
+        <form (keydown.enter)="submit($event)" [formGroup]="forms[0]">
+          <mat-label>Dados pessoais</mat-label>
           <mat-form-field appearance="fill">
             <mat-label>Nome</mat-label>
-            <input matInput />
+            <input matInput autofocus formControlName="name" #input1 />
           </mat-form-field>
 
           <div class="group">
-            <mat-label>De onde você é?</mat-label>
             <div class="row">
               <mat-form-field appearance="fill">
                 <mat-label>Cidade</mat-label>
-                <input matInput />
+                <input matInput formControlName="city" />
               </mat-form-field>
               <mat-form-field appearance="fill">
                 <mat-label>Estado</mat-label>
-                <input matInput />
+                <input matInput formControlName="state" />
               </mat-form-field>
             </div>
           </div>
@@ -49,39 +48,43 @@
             mat-raised-button
             color="accent"
             type="button"
-            (click)="changeStep()"
+            (click)="submit($event)"
           >
             Próximo
           </button>
         </form></mat-tab
       >
       <mat-tab>
-        <form>
-          <mat-label>Abrigo ou Plantel</mat-label>
+        <form (keydown.enter)="submit($event)" [formGroup]="forms[1]">
           <mat-form-field appearance="fill">
-            <input matInput />
+            <mat-label>Abrigo ou Plantel</mat-label>
+            <input matInput formControlName="guardian" #input2 />
           </mat-form-field>
 
           <mat-label>Documentos</mat-label>
 
           <mat-form-field appearance="fill">
             <mat-label>CNPJ</mat-label>
-            <input matInput />
+            <input matInput formControlName="cnpj" />
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>CMUS</mat-label>
-            <input matInput />
+            <input matInput formControlName="cmus" />
           </mat-form-field>
 
           <mat-form-field appearance="fill">
             <mat-label>CMCA</mat-label>
-            <input matInput />
+            <input matInput formControlName="cmca" />
           </mat-form-field>
 
-          <mat-label>Telefone da Instituição</mat-label>
           <mat-form-field appearance="fill">
-            <input matInput placeholder="92 00000-00000" />
+            <mat-label>Telefone da Instituição</mat-label>
+            <input
+              matInput
+              placeholder="92 00000-00000"
+              formControlName="phone"
+            />
           </mat-form-field>
 
           <div class="row">
@@ -93,7 +96,7 @@
               mat-raised-button
               color="accent"
               type="button"
-              (click)="changeStep()"
+              (click)="submit($event)"
             >
               Próximo
             </button>
@@ -101,14 +104,25 @@
         </form>
       </mat-tab>
       <mat-tab>
-        <form>
-          <mat-label>Email</mat-label>
+        <form (keydown.enter)="submit($event)" [formGroup]="forms[2]">
+          <mat-label>Credenciais</mat-label>
           <mat-form-field appearance="fill">
-            <input matInput placeholder="email@mail.com" />
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="email@mail.com"
+              formControlName="email"
+              #input3
+            />
           </mat-form-field>
-          <mat-label>Senha</mat-label>
           <mat-form-field appearance="fill">
-            <input matInput placeholder="******" type="password" />
+            <mat-label>Senha</mat-label>
+            <input
+              matInput
+              placeholder="******"
+              type="password"
+              formControlName="password"
+            />
           </mat-form-field>
 
           <div class="row">
@@ -120,9 +134,11 @@
               mat-raised-button
               color="accent"
               type="button"
-              (click)="submit()"
+              (click)="submit($event)"
+              [disabled]="isSubmitting"
             >
               Concluir
+              <mat-spinner [diameter]="18" *ngIf="isSubmitting"></mat-spinner>
             </button>
           </div>
         </form>

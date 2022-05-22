@@ -17,7 +17,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTabsModule } from '@angular/material/tabs';
 import { SignupComponent } from './signup/signup.component';
 import { PetListComponent } from './pet-list/pet-list.component';
-import { MatExpansionModule } from '@angular/material/expansion'
+import { MatExpansionModule } from '@angular/material/expansion';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { MatExpansionModule } from '@angular/material/expansion'
     MatRadioModule,
     MatTabsModule,
     MatExpansionModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

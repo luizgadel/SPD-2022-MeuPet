@@ -1,96 +1,99 @@
 /* Global Styles */
+@use "@angular/material" as mat;
+@import "theme.scss";
 
-$primary-color: #DCA146;
+$primary-color: mat.get-color-from-palette($primary-palette);
 
 * {
-    font-family: 'Roboto', Arial, sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    margin: 0;
-    background-color: #fafafa;
+  margin: 0;
+  background-color: #fafafa;
 }
 
 .container {
-    display: flex;
-    flex-direction: row;
-}
-
-.btn-primary {
-    background-color: $primary-color;
-    color: white;
+  display: flex;
+  flex-direction: row;
 }
 
 .color-primary {
-    color: $primary-color;
+  color: $primary-color;
 }
 
-router-outlet + *  {
-    padding: 0 16px;
+router-outlet + * {
+  padding: 0 16px;
 }
 
 /* Hyperlink */
 
 a {
-    cursor: pointer;
-    color: $primary-color;
-    text-decoration: none;
+  cursor: pointer;
+  color: $primary-color;
+  text-decoration: none;
 }
 
 a:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 i.material-icons {
-    color: white;
-    padding: 0px 4px;
+  color: white;
+  padding: 0px 4px;
 }
-  
+
 /* Top Bar */
-  
+
 app-top-bar {
-    width: 100%;
-    height: 68px;
-    background-color: $primary-color;
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  width: 100%;
+  height: 68px;
+  background-color: $primary-color;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
-  
+
 app-top-bar h1 {
-    color: white;
-    margin: 0;
+  color: white;
+  margin: 0;
 }
 
 app-home {
-    width: 100%;
+  width: 100%;
 }
-  
+
 /* Checkout Cart, Shipping Prices */
-  
-.cart-item, .shipping-item {
-    width: 100%;
-    min-width: 400px;
-    max-width: 450px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 32px;
-    margin-bottom: 8px;
-    border-radius: 2px;
-    background-color: #EEEEEE;
+
+.cart-item,
+.shipping-item {
+  width: 100%;
+  min-width: 400px;
+  max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 32px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  background-color: #eeeeee;
 }
-  
-  
+
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
 */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -12,8 +12,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { SignupComponent } from './signup/signup.component';
+import { PetListComponent } from './pet-list/pet-list.component';
+import { MatExpansionModule } from '@angular/material/expansion'
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { SignupComponent } from './signup/signup.component';
     TopBarComponent,
     HomeComponent,
     SignupComponent,
+    PetListComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +37,11 @@ import { SignupComponent } from './signup/signup.component';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
+    MatTabsModule,
+    MatExpansionModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

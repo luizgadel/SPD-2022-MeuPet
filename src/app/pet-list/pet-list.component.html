@@ -1,0 +1,39 @@
+<div class="first">
+  <div class="page-title row">
+    <h2>Pets cadastrados</h2>
+    <button
+      mat-fab
+      color="primary"
+      aria-label="Example icon button with a delete icon"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let pet of pets">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ pet.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{ pet.species }}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="row">
+          <div class="pet-data">
+            <p>RGA: {{ pet.RGA }}</p>
+            <p>Descrição: {{ pet.desc }}</p>
+            <p>Idade: {{ pet.age }}</p>
+            <p>Castrad{{genderEndingVowel.get(pet.gender)}}: {{ pet.castrated ? '✅':'❌'}}</p>
+            <p>Vermifugad{{genderEndingVowel.get(pet.gender)}}: {{ pet.wormed ? '✅':'❌'}}</p>
+            <p>Vacinad{{genderEndingVowel.get(pet.gender)}}: {{ pet.vacinated ? '✅':'❌'}}</p>
+            <p *ngIf="pet.value > 0 && pet.value < 100000000">Preço para venda: R$ {{ pet.value }},00</p>
+          </div>
+          <div class="pet-img">
+              <img [src]="pet.photo" />
+          </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

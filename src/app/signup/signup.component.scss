@@ -1,0 +1,98 @@
+@use "sass:map";
+@import "../../theme.scss";
+
+:host {
+  padding: 1rem;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: map.get($md-primary, 200);
+}
+
+mat-card {
+  padding: 1.5rem 0;
+}
+
+mat-tab-group {
+  width: 420px;
+
+  ::ng-deep.mat-tab-header {
+    display: none !important;
+  }
+}
+
+form > * {
+  width: 100%;
+}
+
+.mat-card-title,
+.mat-card-subtitle {
+  text-align: center;
+}
+
+.mat-card-title {
+  margin-top: 1rem !important;
+}
+
+.mat-card-subtitle {
+  margin-bottom: 2rem;
+}
+
+mat-label {
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+mat-form-field {
+  mat-label {
+    display: inline;
+  }
+
+  ::ng-deep.mat-form-field-infix {
+    width: auto !important;
+  }
+}
+
+mat-radio-group {
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+button {
+  width: auto !important;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  mat-card,
+  button {
+    width: 100% !important;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem;
+}
+
+button {
+  margin-top: 2rem;
+}
+
+.ml-auto {
+  margin-left: auto;
+}

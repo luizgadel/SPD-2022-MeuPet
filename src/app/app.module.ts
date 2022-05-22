@@ -12,16 +12,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
 import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    TopBarComponent,
-    HomeComponent,
-    SignupComponent,
-  ],
+  declarations: [AppComponent, TopBarComponent, HomeComponent, SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,8 +29,10 @@ import { SignupComponent } from './signup/signup.component';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
+    MatTabsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

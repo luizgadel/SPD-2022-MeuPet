@@ -2,12 +2,13 @@
   <div class="page-title row">
     <h2>Pets cadastrados</h2>
     <button
-      mat-fab
+      mat-raised-button
       (click)="openDialog()"
       color="primary"
       aria-label="Example icon button with a delete icon"
     >
-      <mat-icon>add</mat-icon>
+    <mat-icon>add</mat-icon>
+      Novo Pet
     </button>
   </div>
 
@@ -22,18 +23,29 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="row">
-          <div class="pet-data">
-            <p>Idade: {{ pet.age }}</p>
-            <p>Sobre o pet: {{ pet.desc }}</p>
-            <p>Castrad{{genderEndingVowel.get(pet.gender)}}: {{ pet.castrated ? '✅':'❌'}}</p>
-            <p>Vermifugad{{genderEndingVowel.get(pet.gender)}}: {{ pet.wormed ? '✅':'❌'}}</p>
-            <p>Vacinad{{genderEndingVowel.get(pet.gender)}}: {{ pet.vacinated ? '✅':'❌'}}</p>
-            <p *ngIf="pet.value > 0 && pet.value < 100000000">Preço para venda: R$ {{ pet.value }},00</p>
-            <p>RGA: {{ pet.RGA }}</p>
-          </div>
-          <div class="pet-img">
-              <img [src]="pet.photo" />
-          </div>
+        <div class="pet-data">
+          <p>Idade: {{ pet.age }}</p>
+          <p>Sobre o pet: {{ pet.desc }}</p>
+          <p>
+            Castrad{{ genderEndingVowel.get(pet.gender) }}:
+            {{ pet.castrated ? "✅" : "❌" }}
+          </p>
+          <p>
+            Vermifugad{{ genderEndingVowel.get(pet.gender) }}:
+            {{ pet.wormed ? "✅" : "❌" }}
+          </p>
+          <p>
+            Vacinad{{ genderEndingVowel.get(pet.gender) }}:
+            {{ pet.vacinated ? "✅" : "❌" }}
+          </p>
+          <p *ngIf="pet.value > 0 && pet.value < 100000000">
+            Preço para venda: R$ {{ pet.value }},00
+          </p>
+          <p>RGA: {{ pet.RGA }}</p>
+        </div>
+        <div class="pet-img">
+          <img [src]="pet.photo" />
+        </div>
       </div>
       <mat-action-row>
         <button mat-button>Excluir</button>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddPetDialogComponent } from '../add-pet-dialog/add-pet-dialog.component';
 import { Pet, pets } from '../pets';
 
 @Component({
@@ -17,7 +19,15 @@ export class PetListComponent implements OnInit {
   ]);
 
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(AddPetDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
 
   ngOnInit(): void {
   }

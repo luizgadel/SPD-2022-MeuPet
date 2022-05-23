@@ -1,0 +1,32 @@
+div {
+  flex-direction: row;
+  align-items: center;
+}
+
+mat-form-field {
+  margin: 4px;
+}
+
+div.switch-input {
+  margin: 0px 0px 16px;
+
+  mat-slide-toggle {
+    margin: 0px 8px;
+  }
+}
+
+div.big-form {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+
+  mat-form-field {
+    width: 100% !important;
+  }
+}

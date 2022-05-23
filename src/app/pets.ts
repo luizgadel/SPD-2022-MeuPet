@@ -4,7 +4,7 @@ export interface Pet {
     photo: string;
     desc: string;
     species: string;
-    age: number;
+    age: string;
     gender: string;
     castrated: boolean;
     wormed: boolean;
@@ -20,7 +20,7 @@ export const pets: Array<Pet> = [
         photo: "./../assets/snoop-catioro.png",
         desc: "Muito estiloso. Latidos contagiosos.",
         species: "Cachorro",
-        age: 5,
+        age: "5 anos",
         gender: "masc",
         castrated: true,
         wormed: true,
@@ -34,7 +34,7 @@ export const pets: Array<Pet> = [
         photo: "./../assets/vana.jpg",
         desc: "Uma bebê carente. Adora dormir no colo.",
         species: "Gato",
-        age: 0.8333,
+        age: "1 mês",
         gender: "fem",
         castrated: false,
         wormed: false,
@@ -49,7 +49,7 @@ export const pets: Array<Pet> = [
         species: "Cachorro",
         photo: "./../assets/perola.jpg",
         castrated: true,
-        age: 4,
+        age: "4 anos",
         gender: "fem",
         wormed: true,
         vacinated: true,
@@ -62,7 +62,7 @@ export const pets: Array<Pet> = [
         photo: "./../assets/apollo.jpg",
         desc: "Gatinho fofo. Só não gosta de carinho na barriga.",
         species: "Gato",
-        age: 6,
+        age: "6 anos",
         gender: "masc",
         castrated: true,
         wormed: true,

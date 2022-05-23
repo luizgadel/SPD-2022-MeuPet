@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddPetDialogComponent } from '../add-pet-dialog/add-pet-dialog.component';
-import { Pet, pets } from '../pets';
+import { Pet, pets } from '../dummy-data/pets';
 
 @Component({
   selector: 'app-pet-list',

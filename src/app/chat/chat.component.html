@@ -1,0 +1,14 @@
+<h2 class="mt-2">Chats</h2>
+<mat-table [dataSource]="messages" class="mat-elevation-z8">
+  <ng-container matColumnDef="senderEmail">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Remetente </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.senderEmail }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="content">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> Mensagem </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element"> {{ element.content }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row matRipple *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

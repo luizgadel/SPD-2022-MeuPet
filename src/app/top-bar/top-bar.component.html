@@ -19,13 +19,21 @@
   </button>
   <button
     mat-icon-button
+    [routerLink]="['chat']"
     aria-label="Botão redondo com ícone de um balão de conversa. Leva ao histórico de chats."
   >
     <mat-icon>chat</mat-icon>
   </button>
+
+  <mat-menu #account="matMenu">
+    <button mat-menu-item>Minha conta</button>
+    <button [routerLink]="['pet-list']" mat-menu-item>Meus pets</button>
+    <button [routerLink]="['signup']" mat-menu-item>Sair</button>
+  </mat-menu>
+
   <button
     mat-icon-button
-    [routerLink]="['pet-list']"
+    [matMenuTriggerFor]="account"
     aria-label="Botão redondo com ícone de um perfil humano. Leva às configurações da conta do usuário."
   >
     <mat-icon>account_circle</mat-icon>

@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
           Validators.minLength(4),
         ]),
         cnpj: new FormControl('', [Validators.required]),
-        cmus: new FormControl('', [Validators.required]),
+        cmvs: new FormControl('', [Validators.required]),
         cmca: new FormControl('', [Validators.required]),
         phone: new FormControl('', [Validators.required]),
       }),

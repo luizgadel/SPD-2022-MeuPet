@@ -1,8 +1,14 @@
+@use "sass:map";
+@import "../../theme.scss";
+
 :host {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh;
+
+    background-color: map.get($md-primary, 200);
 }
 
 div.first {
@@ -43,4 +49,10 @@ div.pet-img {
         height: 100%;
         object-fit: contain;
     }
+}
+
+/* Garante o alinhamento do início das descrições dos pets */
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
 }

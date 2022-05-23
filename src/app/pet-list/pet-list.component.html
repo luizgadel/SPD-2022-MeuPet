@@ -22,18 +22,22 @@
       </mat-expansion-panel-header>
       <div class="row">
           <div class="pet-data">
-            <p>RGA: {{ pet.RGA }}</p>
-            <p>Descrição: {{ pet.desc }}</p>
             <p>Idade: {{ pet.age }}</p>
+            <p>Sobre o pet: {{ pet.desc }}</p>
             <p>Castrad{{genderEndingVowel.get(pet.gender)}}: {{ pet.castrated ? '✅':'❌'}}</p>
             <p>Vermifugad{{genderEndingVowel.get(pet.gender)}}: {{ pet.wormed ? '✅':'❌'}}</p>
             <p>Vacinad{{genderEndingVowel.get(pet.gender)}}: {{ pet.vacinated ? '✅':'❌'}}</p>
             <p *ngIf="pet.value > 0 && pet.value < 100000000">Preço para venda: R$ {{ pet.value }},00</p>
+            <p>RGA: {{ pet.RGA }}</p>
           </div>
           <div class="pet-img">
               <img [src]="pet.photo" />
           </div>
       </div>
+      <mat-action-row>
+        <button mat-button>Excluir</button>
+        <button mat-button color="primary">Editar</button>
+      </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

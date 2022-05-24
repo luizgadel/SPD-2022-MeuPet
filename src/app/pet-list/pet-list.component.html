@@ -7,11 +7,19 @@
       color="primary"
       aria-label="Example icon button with a delete icon"
     >
-    <mat-icon>add</mat-icon>
+      <mat-icon>add</mat-icon>
       Novo Pet
     </button>
   </div>
 
+  <mat-card *ngIf="!isTherePets">
+    <mat-card-content>
+      <h4>
+        <b>Não há pets cadastrados.</b>
+      </h4>
+      <p>Cadastre um pet clicando no botão 'Novo Pet'.</p>
+    </mat-card-content>
+  </mat-card>
   <mat-accordion>
     <mat-expansion-panel *ngFor="let pet of pets">
       <mat-expansion-panel-header>
@@ -27,15 +35,15 @@
           <p>Idade: {{ pet.age }}</p>
           <p>Sobre o pet: {{ pet.desc }}</p>
           <p>
-            Castrad{{ genderEndingVowel.get(pet.gender) }}:
+            Castrado:
             {{ pet.castrated ? "✅" : "❌" }}
           </p>
           <p>
-            Vermifugad{{ genderEndingVowel.get(pet.gender) }}:
+            Vermifugado:
             {{ pet.wormed ? "✅" : "❌" }}
           </p>
           <p>
-            Vacinad{{ genderEndingVowel.get(pet.gender) }}:
+            Vacinado:
             {{ pet.vacinated ? "✅" : "❌" }}
           </p>
           <p *ngIf="pet.value > 0 && pet.value < 100000000">
@@ -49,7 +57,9 @@
       </div>
       <mat-action-row>
         <button mat-button (click)="openDeletePetDialog(pet)">Excluir</button>
-        <button mat-button color="primary" (click)="openEditPetDialog(pet)">Editar</button>
+        <button mat-button color="primary" (click)="openEditPetDialog(pet)">
+          Editar
+        </button>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>

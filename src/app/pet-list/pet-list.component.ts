@@ -13,12 +13,8 @@ import { PetService } from '../services/pet.service';
   styleUrls: ['./pet-list.component.scss'],
 })
 export class PetListComponent implements OnInit {
-  panelOpenState = false;
   pets: Pet[] = [];
-  genderEndingVowel = new Map<String, String>([
-    ['masc', 'o'],
-    ['fem', 'a'],
-  ]);
+  isTherePets = false;
 
   constructor(
     public dialog: MatDialog,
@@ -33,9 +29,10 @@ export class PetListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: String) => {
       if (result == 'OK') {
-        console.log("Pet added")
+        console.log('Pet added');
         this.updatePetList();
-      } console.log("Pet not added")
+      }
+      console.log('Pet not added');
     });
   }
 
@@ -68,6 +65,8 @@ export class PetListComponent implements OnInit {
   updatePetList() {
     this.petService.list().subscribe((_pets) => {
       this.pets = _pets;
+      if (_pets.length > 0) this.isTherePets = true;
+      else this.isTherePets = false;
     });
   }
 }

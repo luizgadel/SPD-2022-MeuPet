@@ -1,4 +1,15 @@
 <div>
+  <div class="page-title row">
+    <h2>Página inicial</h2>
+  </div>
+  <mat-card *ngIf="!isTherePets">
+    <mat-card-content>
+      <h4>
+        <b>Erro ao carregar os pets.</b>
+      </h4>
+      <p>Não há pets cadastrados no momento. 🥺</p>
+    </mat-card-content>
+  </mat-card>
   <mat-card *ngFor="let pet of pets">
     <div class="title">
       <img mat-card-avatar [src]="guardianById(pet.guardianCNPJ).photo" />

@@ -33,11 +33,11 @@ new Server({
     guardians.forEach((guardian) => {
       server.create('user', guardian as Object);
     });
-
+    /*
     pets.forEach((pet) => {
       server.create('pet', pet as Object);
     });
-
+    */
     messages.forEach((message) => {
       server.create('message', message as Object);
     });

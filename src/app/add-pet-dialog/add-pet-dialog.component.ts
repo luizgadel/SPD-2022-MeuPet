@@ -22,7 +22,7 @@ export class AddPetDialogComponent implements OnInit {
     private petService: PetService,
     private formBuilder: FormBuilder
   ) {
-    this.form = formBuilder.group({
+    this.form = this.formBuilder.group({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       species: new FormControl('', Validators.required),
       age: new FormControl('', Validators.required),
@@ -40,8 +40,12 @@ export class AddPetDialogComponent implements OnInit {
     if (this.form.valid) {
       var pet: Pet = {
         ...this.form.getRawValue(),
-        species: this.form.get('species')?.value == 'one' ? 'Cachorro':'Gato'
+        species: this.form.get('species')?.value == 'one' ? 'Cachorro' : 'Gato',
+        guardianCNPJ: 1,
+        photo: './../assets/'
       };
+
+      pet.photo += (pet.species == 'Gato') ? 'cat-emoji.png':'dog-emoji.png'
 
       this.petService.create(pet);
       this.dialogRef.close('OK');

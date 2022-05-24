@@ -30,7 +30,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditPetDialogComponent } from './edit-pet-dialog/edit-pet-dialog.component';
 import { DeletePetDialogComponent } from './delete-pet-dialog/delete-pet-dialog.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http'
     ChatComponent,
     EditPetDialogComponent,
     DeletePetDialogComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -42,16 +42,20 @@
               >
             </mat-radio-group>
           </div>
-
-          <button
-            class="ml-auto"
-            mat-raised-button
-            color="accent"
-            type="button"
-            (click)="submit($event)"
-          >
-            Próximo
-          </button>
+          <div class="row">
+            <button mat-button type="button" [routerLink]="['', 'login']">
+              Voltar ao login
+            </button>
+            <button
+              class="ml-auto"
+              mat-raised-button
+              color="accent"
+              type="button"
+              (click)="submit($event)"
+            >
+              Próximo
+            </button>
+          </div>
         </form></mat-tab
       >
       <mat-tab>

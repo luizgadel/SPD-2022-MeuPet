@@ -7,13 +7,13 @@ export interface User {
     photo: string
 }
 
-export const guardians: Array<User> = [
+export const users: Array<User> = [
     {
         name: "Pedro Silva",
         email: "pedrosilva@email.com",
         password: "pedro123",
         address: "Manaus, AM",
         telephone: "",
-        photo: "./../assets/abrigo-animais-aumigos.jpg",
+        photo: "",
     }
 ]

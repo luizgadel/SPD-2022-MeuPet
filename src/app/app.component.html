@@ -1,4 +1,4 @@
-<app-top-bar *ngIf="!hasRoute('signup')"></app-top-bar>
+<app-top-bar *ngIf="!hasRoute('signup') && !hasRoute('login')"></app-top-bar>
 
 <div class="container">
   <router-outlet></router-outlet>

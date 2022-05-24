@@ -4,11 +4,31 @@ import { BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { User } from './models/user.interface';
 
-const API_URL = environment.API_URL + '/user';
+const API_URL = environment.API_URL + '/users';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
+  loggedInUsers = new BehaviorSubject<User>(null!)
+
   constructor(private http: HttpClient) {}
+
+  authenticate(email: string, password: string) {
+    this.list().subscribe({
+      next: (users) => {
+        if (users != null) {
+          var user = users.find(
+            (u) => u.email == email && u.password == password
+          );
+  
+          if (user != undefined) {
+            this.loggedInUsers.next(user)
+          }
+        }
+      },
+    });
+
+    return this.loggedInUsers.asObservable()
+  }
 
   list() {
     var usersSubject = new BehaviorSubject<User[]>(null!);

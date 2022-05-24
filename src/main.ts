@@ -1,11 +1,12 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { Factory, Model, Server } from 'miragejs';
+import { Model, Server } from 'miragejs';
 
 import { AppModule } from './app/app.module';
 import { guardians } from './app/services/models/guardian.interface';
 import { messages } from './app/services/models/message.interface';
 import { pets } from './app/services/models/pet.interface';
+import { users } from './app/services/models/user.interface';
 import { environment } from './environments/environment.prod';
 
 if (environment.production) {
@@ -25,8 +26,12 @@ new Server({
   },
 
   seeds(server) {
+    users.forEach((user) => {
+      server.create('user', user as Object);
+    });
+
     guardians.forEach((guardian) => {
-      server.create('guardian', guardian as Object);
+      server.create('user', guardian as Object);
     });
 
     pets.forEach((pet) => {
@@ -43,13 +48,13 @@ new Server({
 
     this.get(this.namespace + '/users', (schema) => {
       return {
-        pets: schema.all('user').models,
+        users: schema.all('user').models,
       };
     });
 
     this.get(this.namespace + '/guardians', (schema) => {
       return {
-        pets: schema.all('guardian').models,
+        guardians: schema.all('guardian').models,
       };
     });
 
@@ -68,7 +73,7 @@ new Server({
 
     this.get(this.namespace + '/messages', (schema) => {
       return {
-        pets: schema.all('message').models,
+        messages: schema.all('message').models,
       };
     });
   },

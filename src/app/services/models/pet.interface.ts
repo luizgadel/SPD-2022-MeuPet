@@ -1,14 +1,14 @@
 export interface Pet {
-    RGA: number;
     name: string;
-    photo: string;
-    desc: string;
     species: string;
     age: string;
-    gender: string;
+    RGA: number;
+    desc: string;
     castrated: boolean;
     wormed: boolean;
     vacinated: boolean;
+    photo: string;
+    gender: string;
     value: number;
     guardianCNPJ: string;
 }

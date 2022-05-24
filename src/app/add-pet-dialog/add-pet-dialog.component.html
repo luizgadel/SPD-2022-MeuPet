@@ -1,52 +1,53 @@
 <h2 mat-dialog-title>Adicionar Pet</h2>
 <mat-dialog-content class="mat-typography">
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Nome </mat-label>
-      <input matInput placeholder="Garfield" />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Espécie</mat-label>
-      <mat-select>
-        <mat-option value="one">Cachorro</mat-option>
-        <mat-option value="two">Gato</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field appearance="fill">
-      <mat-label>Idade</mat-label>
-      <input matInput placeholder="2 anos" />
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>RGA</mat-label>
-      <input matInput placeholder="12345678" />
-    </mat-form-field>
-  </div>
-  <div class="big-form">
-    <mat-form-field appearance="fill">
-      <mat-label>Sobre o pet</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field>
-  </div>
-  <div class="switch-input row">
-    Castrado?
-    <mat-slide-toggle></mat-slide-toggle>
-    Vermifugado?
-    <mat-slide-toggle></mat-slide-toggle>
-    Vacinado?
-    <mat-slide-toggle></mat-slide-toggle>
-  </div>
+  <form [formGroup]="form">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Nome </mat-label>
+        <input matInput placeholder="Garfield" formControlName="name"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Espécie</mat-label>
+        <mat-select formControlName="species">
+          <mat-option value="one">Cachorro</mat-option>
+          <mat-option value="two">Gato</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Idade</mat-label>
+        <input matInput placeholder="2 anos" formControlName="age"/>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>RGA</mat-label>
+        <input matInput placeholder="12345678" formControlName="RGA"/>
+      </mat-form-field>
+    </div>
+    <div class="big-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Sobre o pet</mat-label>
+        <textarea matInput formControlName="desc"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="switch-input row">
+      Castrado?
+      <mat-slide-toggle formControlName="castrated"></mat-slide-toggle>
+      Vermifugado?
+      <mat-slide-toggle formControlName="wormed"></mat-slide-toggle>
+      Vacinado?
+      <mat-slide-toggle formControlName="vacinated"></mat-slide-toggle>
+    </div>
+  </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancelar</button>
   <button
     mat-raised-button
     color="primary"
-    [mat-dialog-close]="true"
-    cdkFocusInitial
+    (click)="savePet()"
   >
     Adicionar
   </button>

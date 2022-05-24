@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Guardian, guardians } from '../dummy-data/guardians';
-import { pets } from '../dummy-data/pets';
+import { Guardian, guardians } from '../services/models/guardian.interface';
+import { pets } from '../services/models/pet.interface';
 
 @Component({
   selector: 'app-home',

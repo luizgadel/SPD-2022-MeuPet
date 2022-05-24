@@ -1,4 +1,4 @@
-import { User } from "./users";
+import { User } from "./user.interface";
 
 export interface Guardian extends User{
     CNPJ: string,
@@ -10,8 +10,8 @@ export interface Guardian extends User{
 export const guardians: Array<Guardian> = [
     {
         name: "Abrigo São João",
-        email: "",
-        password: "",
+        email: "saojoao@pets.com",
+        password: "saojoao123",
         address: "Manaus, AM",
         telephone: "",
         photo: "./../assets/abrigo-animais-aumigos.jpg",

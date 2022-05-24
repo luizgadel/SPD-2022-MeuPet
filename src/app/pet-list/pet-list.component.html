@@ -3,7 +3,7 @@
     <h2>Pets cadastrados</h2>
     <button
       mat-raised-button
-      (click)="openDialog()"
+      (click)="openCreatePetDialog()"
       color="primary"
       aria-label="Example icon button with a delete icon"
     >
@@ -48,8 +48,8 @@
         </div>
       </div>
       <mat-action-row>
-        <button mat-button>Excluir</button>
-        <button mat-button color="primary">Editar</button>
+        <button mat-button (click)="openDeletePetDialog(pet)">Excluir</button>
+        <button mat-button color="primary" (click)="openEditPetDialog(pet)">Editar</button>
       </mat-action-row>
     </mat-expansion-panel>
   </mat-accordion>

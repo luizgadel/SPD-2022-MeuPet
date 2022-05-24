@@ -25,8 +25,12 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-import { ChatComponent } from './chat/chat.component'
+import { ChatComponent } from './chat/chat.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditPetDialogComponent } from './edit-pet-dialog/edit-pet-dialog.component';
+import { DeletePetDialogComponent } from './delete-pet-dialog/delete-pet-dialog.component';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { MatTableModule } from '@angular/material/table';
     PetListComponent,
     AddPetDialogComponent,
     ChatComponent,
+    EditPetDialogComponent,
+    DeletePetDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +64,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSlideToggleModule,
     MatMenuModule,
     MatTableModule,
+    MatSnackBarModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
